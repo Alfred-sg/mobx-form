@@ -1,0 +1,23 @@
+{
+  "name": "form-builder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/index.js",
+  "scripts": {
+    "test": "dn test && dn build -e prod"
+  },
+  "author": {
+    "name": "alfred"
+  },
+  "license": "MIT",
+  "devDependencies": {},
+  "dependencies": {
+    "antd": "^3.9.2",
+    "async-validator": "^1.8.5",
+    "babel-plugin-import": "^1.9.1",
+    "mobx": "^5.1.1",
+    "mobx-react": "^5.2.8",
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1"
+  }
+}

@@ -1,0 +1,36 @@
+init:
+  - name: pkginfo
+
+dev:
+  - name: clean
+  - name: webpack
+    watch: true
+    babel:
+      plugins:
+        -
+          - /Users/alfred/Desktop/learning/mobx-form/node_modules/babel-plugin-import # 必须是插件的绝对路径
+          - { libraryName: antd, style: true }
+  - name: server
+    port: 3002
+  - name: browser-sync
+
+build:
+  - name: clean
+  - name: copy
+    files:
+      (0): ./src/assets/favicon.ico
+  - name: webpack
+
+add:
+  - name: react-component-creator
+
+test:
+  - name: lint
+  - name: unit
+
+publish:
+  - name: shell
+    script:
+      - dn test
+      - dn build
+      - npm pu
