@@ -1,0 +1,17 @@
+{
+  "plugins": [
+    "transform-decorators-legacy",
+    [
+      "babel-plugin-import",
+      {
+        "libraryName": "antd", 
+        "style": true
+      }
+    ]
+  ],
+  "presets": [
+    "babel-preset-env",
+    "babel-preset-stage-0",
+    "babel-preset-react"
+  ]
+}

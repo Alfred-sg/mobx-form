@@ -20,13 +20,23 @@ build:
     files:
       (0): ./src/assets/favicon.ico
   - name: webpack
+    entry: ./src/js/Form.js
+    compress: false
+    common:
+      disabled: true
+    library: true
+    umd:
+      library: MobxForm
+      libraryTarget: umd
 
 add:
   - name: react-component-creator
 
 test:
-  - name: lint
-  - name: unit
+  # - name: lint
+  # - name: unit
+  - name: storybook
+    type: react
 
 publish:
   - name: shell
