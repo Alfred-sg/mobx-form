@@ -7,9 +7,9 @@ module.exports = (storybookBaseConfig, configType, defaultConfig) => {
   });
 
   storybookBaseConfig.resolve.alias = {
-    'apis': path.resolve(__dirname, '../src/js/apis'),
-    'components': path.resolve(__dirname, '../src/js/components'),
-    'models': path.resolve(__dirname, '../src/js/models')
+    'apis': path.resolve(__dirname, '../src/apis'),
+    'components': path.resolve(__dirname, '../src/components'),
+    'models': path.resolve(__dirname, '../src/models')
   }
 
   return storybookBaseConfig;
