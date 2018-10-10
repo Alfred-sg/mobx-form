@@ -1,6 +1,8 @@
 {
   "plugins": [
-    "transform-decorators-legacy",
+    "babel-plugin-transform-runtime",
+    "babel-plugin-transform-decorators-legacy",
+    "babel-plugin-transform-remove-strict-mode",
     [
       "babel-plugin-import",
       {
