@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { observer } from "mobx-react";
 import Field from 'models/Field';
 
@@ -12,6 +13,16 @@ export default function form(Comp){
 
   class WrappedComponent extends Component {
     static displayName = `WrappedForm-${Comp.name}`;
+
+    static childContextTypes = {
+      form: PropTypes.object,
+    };
+
+    getChildContext(){
+      return {
+        form: field
+      };
+    }
 
     render(){
       return <ObserveredComp {...this.props} field={field}/>

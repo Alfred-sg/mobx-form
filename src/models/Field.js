@@ -1,11 +1,13 @@
 import { observable, action, computed, toJS } from 'mobx';
 import schema from 'async-validator';
+import { FIELD_META_PROP } from '../constants';
 
 export default class Field {
   fields = {};// 表单项，重绘时实时记录
   rules = {};
   @observable data = {};// 表单数据，onChange 时实时收集
   @observable errors = {};
+  @observable statuses = {};
 
   @action
   onChange(name, value){
@@ -30,6 +32,7 @@ export default class Field {
     if ( rules ) this.rules[name] = rules;
 
     return {
+      [FIELD_META_PROP]: name,
       name,
       ref: this._ref.bind(this, name),
       onChange: event => {
