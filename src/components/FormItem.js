@@ -5,7 +5,9 @@ import RcAnimate from 'rc-animate';
 import classnames from 'classnames';
 import warning from 'warning';
 import { FIELD_META_PROP } from '../constants';
-import { Icon, Row, Col } from 'antd';
+import Row from './Row';
+import Col from './Col';
+import { Icon } from 'antd';
 
 @observer
 export default class FormItem extends Component {
@@ -110,7 +112,7 @@ export default class FormItem extends Component {
    */
   get required() {
     return this.props.required !== undefined ? this.props.required
-      : this.form.rules[this.name].some(item => 'required' in item && item.required);
+      : (this.form.metas[this.name].validate || []).some(item => item.rules.some(it => it.required));
   }
 
   /**

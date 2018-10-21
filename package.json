@@ -19,6 +19,7 @@
     "async-validator": "^1.8.5",
     "babel-plugin-import": "^1.9.1",
     "classnames": "^2.2.6",
+    "enquire.js": "^2.1.6",
     "mobx": "^5.1.1",
     "mobx-react": "^5.2.8",
     "prop-types": "^15.6.2",
